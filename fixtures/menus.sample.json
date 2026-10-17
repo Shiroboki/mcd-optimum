@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "source": "query-meals 实测（2026-10-17 14:23），仅保留 demo 所需样本，已裁剪",
+    "note": "同一商品在两个渠道 productCode 不同；两渠道菜单分类也不同，跨渠道比价必须先做实体对齐",
+    "priceUnit": "元（字符串），入内部模型时乘 100 转为分"
+  },
+  "dine_in": {
+    "query": { "storeCode": "3230323", "orderType": 1, "beType": 1 },
+    "categories": ["人气热卖", "小食拼盘/多人餐", "精选单人餐", "鸡肉汉堡/卷", "蘸酱炸鸡", "随心配 1+1", "大堡口福单人餐", "巨无霸牛鱼肉堡", "安格斯MAX厚牛堡", "炸鸡", "开心乐园", "小食甜品/其他", "500大卡套餐", "饮品"],
+    "meals": {
+      "1100": { "name": "巨无霸", "currentPrice": "26.5", "originalPrice": "26.5", "canWithOrder": false },
+      "9900008751": { "name": "可乐", "currentPrice": "9.5", "originalPrice": "9.5", "canWithOrder": false },
+      "1406": { "name": "板烧鸡腿堡", "currentPrice": "23.5", "originalPrice": "23.5", "canWithOrder": false },
+      "1440": { "name": "麦辣鸡腿汉堡", "currentPrice": "22.5", "originalPrice": "22.5", "canWithOrder": false },
+      "9900013304": { "name": "人气经典随心配", "currentPrice": "14.9", "originalPrice": "14.9", "canWithOrder": false },
+      "9900008754": { "name": "经典麦旋风", "currentPrice": "15", "originalPrice": "15", "canWithOrder": false },
+      "9900016073": { "name": "龙焰鸡腿堡三件套", "currentPrice": "26.9", "originalPrice": "48", "canWithOrder": false },
+      "9900004236": { "name": "人气超值四件套随心选", "currentPrice": "28", "originalPrice": "57.5", "discountType": "随单购麦金卡优惠", "canWithOrder": true },
+      "9900015602": { "name": "大堡口福三件套", "currentPrice": "22.9", "originalPrice": "47.5", "canWithOrder": false },
+      "9900011126": { "name": "酥脆无双套餐", "currentPrice": "20.5", "originalPrice": "20.5", "canWithOrder": false }
+    }
+  },
+  "delivery": {
+    "query": { "storeCode": "3230323", "beCode": "323032302", "orderType": 2, "beType": 2 },
+    "categories": ["人气热卖", "多人分享餐", "麦麦周末", "麦金卡专享", "大堡口福", "鸡肉汉堡/卷", "巨无霸牛鱼肉堡", "蘸酱炸鸡", "安格斯MAX厚牛堡", "炸鸡", "开心乐园", "小食甜品/其他", "500大卡套餐", "饮品"],
+    "meals": {
+      "901100": { "name": "巨无霸", "currentPrice": "29", "originalPrice": "29", "canWithOrder": false },
+      "903050": { "name": "可口可乐", "currentPrice": "11", "originalPrice": "11", "canWithOrder": false },
+      "901406": { "name": "板烧鸡腿堡", "currentPrice": "26.5", "originalPrice": "26.5", "canWithOrder": false },
+      "901440": { "name": "麦辣鸡腿汉堡", "currentPrice": "25.5", "originalPrice": "25.5", "canWithOrder": false },
+      "521950": { "name": "蓝莓爆爆珠麦旋风", "currentPrice": "16.5", "originalPrice": "16.5", "canWithOrder": false },
+      "9900016490": { "name": "龙焰鸡腿堡四件套", "currentPrice": "36.9", "originalPrice": "68.5", "canWithOrder": false },
+      "9900016507": { "name": "龙焰鸡腿堡单人餐（麦金卡免配）", "currentPrice": "34.9", "originalPrice": "65.5", "discountType": "随单购麦金卡优惠", "canWithOrder": true },
+      "9900015658": { "name": "大堡口福三件套（双层脆鸡堡）", "currentPrice": "28.9", "originalPrice": "52", "canWithOrder": false }
+    }
+  },
+  "channel_only_categories": {
+    "dine_in_only": ["小食拼盘/多人餐", "精选单人餐", "随心配 1+1"],
+    "delivery_only": ["多人分享餐", "麦麦周末", "麦金卡专享"]
+  }
+}

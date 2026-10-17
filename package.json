@@ -1,0 +1,33 @@
+{
+  "name": "mcd-optimum",
+  "version": "0.1.0",
+  "private": true,
+  "description": "McOptimum 麦麦最优解 — 基于麦当劳官方 MCP 的跨渠道 × 跨资产最优下单引擎",
+  "keywords": ["mcdonalds", "mcp", "model-context-protocol", "optimizer", "workbuddy"],
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "next": "^15.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

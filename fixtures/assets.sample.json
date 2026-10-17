@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "source": "MCP 实测（2026-10-17），全部凭据字段已脱敏：accountId / addressId / phone / fullAddress / couponId / couponCode 均不落盘",
+    "measuredAccount": "availablePoint = 0"
+  },
+  "account": {
+    "availablePoint": "0",
+    "accumulativePoint": "1068.9",
+    "usedPoint": "781",
+    "expiredPoint": "287.9",
+    "frozenPoint": "0",
+    "currentMouthExpirePoint": "0",
+    "nextMouthExpirePoint": "0",
+    "currency": "麦享会积分"
+  },
+  "coupons": [
+    {
+      "title": "9.9元中杯冰美式",
+      "usePrice": "9.9",
+      "channels": ["到店专用", "外送专用"],
+      "validWindow": "2026-10-17 00:00 ~ 2026-10-23 23:59",
+      "couponId": "<masked>",
+      "couponCode": "<masked>"
+    },
+    {
+      "title": "人气麦旋风买一送一",
+      "usePrice": "15",
+      "channels": ["到店专用"],
+      "validWindow": "2026-10-12 00:00 ~ 2026-10-18 23:59",
+      "validTimeRange": "10:00-22:00",
+      "couponId": "<masked>",
+      "couponCode": "<masked>"
+    },
+    {
+      "title": "巧克力味厚松饼猪柳蛋套餐",
+      "usePrice": "29.9",
+      "channels": ["到店专用"],
+      "validWindow": "2026-10-18 05:00 ~ 2026-10-18 10:29",
+      "validTimeRange": "周日 05:00-10:29",
+      "couponId": "<masked>",
+      "couponCode": "<masked>"
+    }
+  ],
+  "coupon_applicability_probe": {
+    "store_code": "3230323",
+    "query_store_coupons": { "orderType": 1, "beType": 1, "result": [] },
+    "calculate_price_trial": { "code": 600012, "message": "当前优惠券不可用！" },
+    "conclusion": "券可用性 = 门店 × 渠道 × 商品 × 时段 四维约束；query-store-coupons 不可单点依赖，需 calculate-price 试算兜底"
+  },
+  "lottery": {
+    "activityName": "周六麦金喜抽奖",
+    "activityStatusText": "进行中",
+    "drawPoint": "24",
+    "drawTypeText": "消耗积分抽奖",
+    "availablePoint": "0",
+    "drawDecision": {
+      "resourceEligible": false,
+      "reason": "积分不足",
+      "nextConsumption": { "type": "POINTS", "points": "24", "chances": 0, "text": "本次将消耗 24 积分" }
+    },
+    "prizeCount": 27,
+    "_note": "奖品明细样本已裁剪，含优惠券/会员卡/积分奖三类"
+  },
+  "mallPointsProductsSample": [
+    { "spuName": "10.9元指定小食任选", "spuId": 17077, "point": "200", "shopId": 2, "catName": "到店专用", "status": 2, "upTime": "2026-06-25 00:00:03", "downTime": "2026-12-30 23:59:59" },
+    { "spuName": "21.9元巨无霸可乐组合", "spuId": 17081, "point": "800", "shopId": 2, "catName": "到店专用", "status": 2, "upTime": "2026-06-25 00:00:00", "downTime": "2026-12-30 23:59:59" },
+    { "spuName": "18.8元2份麦辣鸡翅", "spuId": 6113, "point": "200", "shopId": 2, "catName": "到店专用", "status": 2, "upTime": "2024-12-31 11:45:03", "downTime": "2026-03-21 23:59:59", "_trap": "status=2 但 downTime 已过期，必须按时间过滤" }
+  ],
+  "campaignsSample": [
+    { "date": "2026-10-17", "title": "麦当劳联动G-DRAGON", "summary": "龙焰鸡腿堡三件套 26.9 元起" },
+    { "date": "2026-10-17", "title": "超值9.9元早餐两件套", "summary": "10月8日至10月21日，周一至周五早餐（时段约束）" },
+    { "date": "2026-10-22", "title": "第三周周边即将开售", "summary": "限定主题丝巾，任意餐品消费加 39.9 元" }
+  ]
+}

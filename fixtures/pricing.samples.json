@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "source": "calculate-price 实测返回（2026-10-17 14:23），金额单位=分",
+    "sanitized": true,
+    "note": "productList 中混入 920174 打包服务费，金额归一化时须剔除"
+  },
+  "samples": {
+    "dine_in": {
+      "request": {
+        "storeCode": "3230323",
+        "orderType": 1,
+        "beType": 1,
+        "items": [
+          { "productCode": "9900013304", "quantity": 1 },
+          { "productCode": "9900008751", "quantity": 1 }
+        ]
+      },
+      "response": {
+        "productOriginalPrice": 2440,
+        "productPrice": 2440,
+        "originalPrice": 2440,
+        "discount": 0,
+        "price": 2440,
+        "takeWayList": [
+          { "code": "eat-in", "title": "堂食", "subtitle": "店内用餐" },
+          { "code": "take-in-store", "title": "外带", "subtitle": "店内自提" }
+        ],
+        "productList": [
+          { "productCode": "9900013304", "productName": "人气经典随心配", "quantity": 1, "originalSubtotal": 1490, "subtotal": 1490 },
+          { "productCode": "9900008751", "productName": "可乐", "quantity": 1, "originalSubtotal": 950, "subtotal": 950 }
+        ]
+      }
+    },
+    "delivery": {
+      "request": {
+        "storeCode": "3230323",
+        "beCode": "323032302",
+        "orderType": 2,
+        "beType": 2,
+        "items": [
+          { "productCode": "901100", "quantity": 1 },
+          { "productCode": "903050", "quantity": 1 }
+        ]
+      },
+      "response": {
+        "productOriginalPrice": 4000,
+        "productPrice": 4000,
+        "deliveryOriginalPrice": 600,
+        "deliveryPrice": 600,
+        "packingOriginalPrice": 110,
+        "packingPrice": 110,
+        "originalPrice": 4710,
+        "discount": 0,
+        "price": 4710,
+        "productList": [
+          { "productCode": "901100", "productName": "巨无霸", "quantity": 1, "originalSubtotal": 2900, "subtotal": 2900 },
+          { "productCode": "903050", "productName": "可口可乐中杯", "quantity": 1, "originalSubtotal": 1100, "subtotal": 1100 },
+          { "productCode": "920174", "productName": "打包服务费", "quantity": 11, "originalSubtotal": 110, "subtotal": 0 }
+        ]
+      }
+    },
+    "error_cases": {
+      "coupon_missing_code": { "code": 600010, "message": "使用优惠券需要couponId和couponCode" },
+      "coupon_unusable": { "code": 600012, "message": "当前优惠券不可用！" },
+      "item_unavailable": { "code": 60006, "message": "商品已售罄或不可售，换一个商品或检查orderType/beType" },
+      "no_store": { "code": 600047, "message": "当前位置附近没有找到合适的餐厅，请更换位置继续查询" },
+      "no_favorite_store": { "code": 600050, "message": "收藏餐厅列表为空，请您提供城市+关键词进行搜索" }
+    }
+  },
+  "cross_channel_comparison": {
+    "intent": "巨无霸 + 中杯可乐",
+    "matched_by": "商品名实体对齐（productCode 跨渠道不通用）",
+    "dine_in": {
+      "productCodes": ["1100", "9900008751"],
+      "productAmount": 3600,
+      "deliveryFee": 0,
+      "packingFee": 0,
+      "total": 3600
+    },
+    "delivery": {
+      "productCodes": ["901100", "903050"],
+      "productAmount": 4000,
+      "deliveryFee": 600,
+      "packingFee": 110,
+      "total": 4710
+    },
+    "delta": { "amount": 1110, "percent": 30.83, "cheaperChannel": "dine_in" }
+  }
+}

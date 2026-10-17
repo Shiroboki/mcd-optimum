@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "source": "query-meal-detail(9900013304 人气经典随心配, 到店) 实测 2026-10-17，已裁剪",
+    "purpose": "证明「组合维」存在真实价差杠杆：套餐 rounds 可换选、每项 diffPrice 决定增减金额；单品支持特调"
+  },
+  "product": { "code": "9900013304", "name": "人气经典随心配", "supportModify": false },
+  "rounds": [
+    {
+      "id": 1,
+      "name": "蓝区",
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "choices": [
+        { "code": "1120", "name": "双层吉士汉堡", "isDefault": 1, "diffPrice": "+ ¥0", "supportModify": true },
+        { "code": "521881", "name": "马来咖喱风味薄皮肉骨鸡3块", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": false },
+        { "code": "521316", "name": "高达吉士双牛堡", "isDefault": 0, "diffPrice": "- ¥1", "supportModify": true },
+        { "code": "1600", "name": "麦香鱼", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": true },
+        { "code": "521156", "name": "那么大鸡排（椒盐风味）", "isDefault": 0, "diffPrice": "- ¥1", "supportModify": false },
+        { "code": "1401", "name": "麦乐鸡5块", "isDefault": 0, "diffPrice": "- ¥1", "supportModify": false },
+        { "code": "1450", "name": "麦香鸡", "isDefault": 0, "diffPrice": "- ¥1", "supportModify": true },
+        { "code": "4800", "name": "小薯条", "isDefault": 0, "diffPrice": "- ¥1", "supportModify": false }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "粉区",
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "choices": [
+        { "code": "521328", "name": "可乐麦炫酷", "isDefault": 1, "diffPrice": "+ ¥0", "supportModify": false },
+        { "code": "515281", "name": "阳光柠檬红茶中杯", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": true },
+        { "code": "3050", "name": "可乐中杯", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": true },
+        { "code": "4437", "name": "小杯玉米杯", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": false },
+        { "code": "4106", "name": "香芋派", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": false },
+        { "code": "4420", "name": "迷你草莓新地", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": false },
+        { "code": "521327", "name": "鲜萃冰咖", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": false },
+        { "code": "515520", "name": "中杯怡泉+C", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": true },
+        { "code": "3071", "name": "无糖可口可乐中杯", "isDefault": 0, "diffPrice": "+ ¥0", "supportModify": true }
+      ]
+    }
+  ],
+  "modificationExample": {
+    "owner": "1120 双层吉士汉堡",
+    "items": [
+      {
+        "maxValues": 5,
+        "minValues": 0,
+        "values": [
+          { "code": "100141", "name": "吉士", "price": 0, "selectedQuantity": 1, "selectedKey": "0-1", "unselectedKey": "0-0" },
+          { "code": "100202", "name": "酸黄瓜", "price": 0, "selectedQuantity": 1, "selectedKey": "0-1", "unselectedKey": "0-0" },
+          { "code": "100212", "name": "洋葱粒", "price": 0, "selectedQuantity": 1, "selectedKey": "0-1", "unselectedKey": "0-0" },
+          { "code": "100214", "name": "番茄酱", "price": 0, "selectedQuantity": 1, "selectedKey": "0-1", "unselectedKey": "0-0" },
+          { "code": "102230", "name": "芥末酱", "price": 0, "selectedQuantity": 1, "selectedKey": "0-1", "unselectedKey": "0-0" }
+        ]
+      }
+    ],
+    "rule": "含 unselectedKey 的特调组必须整组传参：选中项用 selectedKey，未选中项用 unselectedKey"
+  },
+  "optimizer_notes": [
+    "蓝区最低可到 -¥1（换 521316/521156/1401/1450/4800），粉区 9 个选项 0 差价",
+    "单套组合微优化收益上限约 ¥1，主体收益来自渠道选择（实测同款跨渠道差 ¥11.1）与券核销",
+    "组合搜索空间 = ∏ 每轮选项数，必须剪枝（diffPrice>0 默认剔除，加价选项仅在满足偏好约束时保留）"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "source": "麦当劳官方 MCP 实测，2026-10-17 14:23，已脱敏",
+    "note": "同门店不同 beType 的 beCode 不同，禁止跨 beType 复用；到店(beType=1)不传 beCode",
+    "store": {
+      "storeCode": "3230323",
+      "storeName": "麦当劳阜新人民大街友谊商城餐厅",
+      "address": "人民大街84号麦当劳餐厅"
+    }
+  },
+  "channels": {
+    "dine_in": {
+      "label": "到店自取",
+      "beType": 1,
+      "orderType": 1,
+      "beCode": null,
+      "available": true,
+      "evidence": "query-meals 约 130 项；calculate-price 返回 takeWayList",
+      "takeWayList": [
+        { "code": "eat-in", "title": "堂食", "subtitle": "店内用餐" },
+        { "code": "take-in-store", "title": "外带", "subtitle": "店内自提" }
+      ]
+    },
+    "delivery": {
+      "label": "麦乐送",
+      "beType": 2,
+      "orderType": 2,
+      "beCode": "323032302",
+      "available": true,
+      "evidence": "delivery-query-stores(beType=2) 返回门店与营业时段",
+      "businessStartTime": "09:00",
+      "businessEndTime": "21:00",
+      "reservationOptions": [
+        { "date": "2026-10-17", "today": true, "reservationOptionText": "下午茶(15:00至17:29)，夜市(17:30至21:30)" }
+      ]
+    },
+    "group_meal": {
+      "label": "企业团餐",
+      "beType": 6,
+      "orderType": 2,
+      "beCode": "323032381",
+      "available": true,
+      "evidence": "delivery-query-stores(beType=6) 返回另一套 beCode + 7 天预约时段",
+      "businessStartTime": "09:00",
+      "businessEndTime": "21:00"
+    },
+    "drive_thru": {
+      "label": "得来速",
+      "beType": 5,
+      "orderType": 1,
+      "beCode": null,
+      "available": false,
+      "failureCodes": [
+        { "code": 600050, "message": "收藏餐厅列表为空，请您提供城市+关键词进行搜索", "case": "searchType=1" },
+        { "code": 600047, "message": "当前位置附近没有找到合适的餐厅，请更换位置继续查询", "case": "searchType=2, city=阜新/阜新市" }
+      ],
+      "handling": "探测失败视为该账号/地区无 DT 门店，自动降级为两渠道比价，不抛异常"
+    }
+  }
+}

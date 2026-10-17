@@ -1,0 +1,22 @@
+{
+  "$comment": "麦当劳官方 MCP Server 配置示例（已脱敏）。所有敏感值只允许使用环境变量占位符，禁止填写任何真实 token / cookie / 账号信息。",
+  "mcpServers": {
+    "mcd": {
+      "type": "streamable-http",
+      "command": null,
+      "url": "${MCD_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${MCD_MCP_TOKEN}",
+        "Accept": "application/json, text/event-stream"
+      },
+      "env": {
+        "MCD_MCP_URL": "${MCD_MCP_URL}",
+        "MCD_MCP_TOKEN": "${MCD_MCP_TOKEN}"
+      }
+    }
+  },
+  "_usage": {
+    "claude_desktop_or_cursor": "把 mcpServers 段落到宿主配置中，并在宿主环境变量中注入 MCD_MCP_URL / MCD_MCP_TOKEN",
+    "this_project": "本项目通过 src/mcp/client.ts 读取 MCD_MCP_URL 与 MCD_MCP_TOKEN 直连；mock 模式无需任何凭据"
+  }
+}

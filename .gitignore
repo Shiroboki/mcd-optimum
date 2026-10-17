@@ -1,0 +1,57 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# next.js
+.next/
+out/
+build/
+next-env.d.ts
+*.tsbuildinfo
+
+# ===== 凭据与隐私（最重要）=====
+# 任何真实 token / cookie / 账号标识都不得入库
+.env
+.env.*
+!.env.example
+mcp-config.json
+*.local
+*.secret
+cookies*.json
+# DSH 运行时配置（内含明文 Bearer token，绝不能提交）
+cordis.patch.yml
+.cordis/
+
+# 本地抓取的真实 MCP 响应（可能含个人信息 / couponCode）
+logs/
+traces/
+raw-fixtures/
+*.raw.json
+
+# 隐私：本地填写过的门店/地址/账号文件
+local.config.json
+private/
+
+# editor / os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# test / coverage
+coverage/
+.vitest/
+
+# 本地安装/运行产物（不属于项目内容）
+.npm-cache/
+.npm-install.log
+.srv.log
+.srv.err
+
+# pnpm/其他本地缓存
+.pnpm-store/
+
+
+# 调试日志
+debug.log
+
