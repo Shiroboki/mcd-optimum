@@ -1,0 +1,23 @@
+{
+  "_meta": "示例输入：只给菜单，用于跨渠道商品对齐与价差表。数据取自 2026-10-17 真实 MCP 返回（已脱敏）",
+  "menus": [
+    {
+      "channel": "dine_in",
+      "products": [
+        { "productCode": "1100", "name": "巨无霸", "priceCents": 2650 },
+        { "productCode": "9900008751", "name": "可乐", "priceCents": 950 },
+        { "productCode": "1406", "name": "板烧鸡腿堡", "priceCents": 2350 },
+        { "productCode": "1440", "name": "麦辣鸡腿汉堡", "priceCents": 2250 }
+      ]
+    },
+    {
+      "channel": "delivery",
+      "products": [
+        { "productCode": "901100", "name": "巨无霸", "priceCents": 2900 },
+        { "productCode": "903050", "name": "可口可乐", "priceCents": 1100 },
+        { "productCode": "901406", "name": "板烧鸡腿堡", "priceCents": 2650 },
+        { "productCode": "901440", "name": "麦辣鸡腿汉堡", "priceCents": 2550 }
+      ]
+    }
+  ]
+}

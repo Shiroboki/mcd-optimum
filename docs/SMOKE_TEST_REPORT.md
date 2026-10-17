@@ -140,8 +140,10 @@
 
 ---
 
-## 8. 下一步（D0 剩余）
+## 8. 结论如何落到交付物
 
-1. 建公开 GitHub 仓库 + 5 份必备文件骨架（README / CONTEST_DECLARATION / MCP_INTEGRATION / mcp-config.example.json / workbuddy.md）。
-2. 按 §5 收敛后的 P0 写 `docs/PRD.md` 与 8 天排期。
-3. 搭数据层骨架：channel registry（到店/麦乐送/团餐 + DT 降级）、商品对齐表、定价缓存。
+1. **技能本体**：本报告的结论已逐条写入 [`SKILL.md`](../SKILL.md)（三条铁律、7 步协议、常见坑、不要做的事）。
+2. **计算脚本**：商品对齐与排序在 [`scripts/mcd-optimize.mjs`](../scripts/mcd-optimize.mjs) 实现，单测覆盖预算/热量/券透出/预估标记。
+3. **工具契约**：字段与错误码整理进 [`references/mcp-tools.md`](../references/mcp-tools.md) 与 [`references/pricing-and-coupons.md`](../references/pricing-and-coupons.md)。
+4. **可选演示**：`demo/`（Next.js）复用同一套决策逻辑，mock 模式用本报告 `demo/fixtures/` 的脱敏快照零凭据复现。
+5. **提交前动作**：建公开仓库 → 填写 `CONTEST_DECLARATION.md` 个人信息 → 补 `workbuddy.md` 真实对话 → 跑一遍脚本单测与 demo 构建。

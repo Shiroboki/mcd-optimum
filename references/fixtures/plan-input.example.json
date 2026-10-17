@@ -1,0 +1,91 @@
+{
+  "_meta": "示例输入：菜单 + 官方核价结果 + 券试算结论 + 营养表。所有金额单位=分；quotes 来自 calculate-price 真实返回（已脱敏）",
+  "intent": {
+    "storeCode": "3230323",
+    "budgetCents": 3500,
+    "maxKcal": 900,
+    "mustContain": ["汉堡"],
+    "servings": 1
+  },
+  "channels": [
+    { "channel": "dine_in", "available": true },
+    { "channel": "delivery", "available": true, "beCode": "323032302" },
+    { "channel": "group_meal", "available": true, "beCode": "323032381" },
+    { "channel": "drive_thru", "available": false, "failureCode": 600047 }
+  ],
+  "menus": [
+    {
+      "channel": "dine_in",
+      "products": [
+        { "productCode": "1440", "name": "麦辣鸡腿汉堡", "priceCents": 2250 },
+        { "productCode": "1406", "name": "板烧鸡腿堡", "priceCents": 2350 },
+        { "productCode": "9900008751", "name": "可乐", "priceCents": 950 },
+        { "productCode": "9900015602", "name": "大堡口福三件套", "priceCents": 2290 }
+      ]
+    },
+    {
+      "channel": "delivery",
+      "products": [
+        { "productCode": "901440", "name": "麦辣鸡腿汉堡", "priceCents": 2550 },
+        { "productCode": "901406", "name": "板烧鸡腿堡", "priceCents": 2650 },
+        { "productCode": "903050", "name": "可口可乐", "priceCents": 1100 },
+        { "productCode": "9900015658", "name": "大堡口福三件套（双层脆鸡堡）", "priceCents": 2890 }
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "channel": "dine_in",
+      "items": [{ "productCode": "1440", "quantity": 1 }],
+      "productCents": 2250,
+      "deliveryCents": 0,
+      "packingCents": 0,
+      "discountCents": 0,
+      "totalCents": 2250
+    },
+    {
+      "channel": "delivery",
+      "items": [{ "productCode": "901440", "quantity": 1 }],
+      "productCents": 2550,
+      "deliveryCents": 600,
+      "packingCents": 110,
+      "discountCents": 0,
+      "totalCents": 3260
+    },
+    {
+      "channel": "dine_in",
+      "items": [{ "productCode": "9900015602", "quantity": 1 }],
+      "productCents": 2290,
+      "deliveryCents": 0,
+      "packingCents": 0,
+      "discountCents": 0,
+      "totalCents": 2290
+    }
+  ],
+  "coupons": [
+    {
+      "title": "9.9元中杯冰美式",
+      "channelTags": ["到店专用", "外送专用"],
+      "usable": false,
+      "code": 600012,
+      "reason": "当前优惠券不可用！(600012)"
+    },
+    {
+      "title": "人气麦旋风买一送一",
+      "channelTags": ["到店专用"],
+      "usable": false,
+      "code": 600012,
+      "reason": "当前优惠券不可用！(600012)"
+    }
+  ],
+  "nutrition": [
+    { "name": "麦辣鸡腿汉堡", "energyKcal": 485 },
+    { "name": "板烧鸡腿堡", "energyKcal": 391 },
+    { "name": "可乐中杯", "energyKcal": 147 },
+    { "name": "大堡口福三件套", "energyKcal": 495 }
+  ],
+  "diagnostics": [
+    "得来速不可用（600047 当前账号无 DT 门店数据），已自动降级",
+    "券核销试算：0/2 张可用 —— 领到券 ≠ 能用券"
+  ]
+}

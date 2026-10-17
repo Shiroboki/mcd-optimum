@@ -6,6 +6,14 @@
 
 ---
 
+## 0. 交付形态与 WorkBuddy 的关系
+
+本项目的交付物是 **WorkBuddy Skill**：`SKILL.md`（技能本体）+ `scripts/`（零依赖计算脚本）+ `references/`（MCP 契约与口径）。
+
+- WorkBuddy 既是**开发工具**（参与选题、协议设计、代码与文档打磨），也是**运行宿主**（加载技能、按协议调用麦当劳 MCP）。
+- `SKILL.md` frontmatter 中的 `agent_created: true` 表示该技能由 AI Agent 协作产出，正文经参赛者人工审校。
+- 技能运行时的所有价格与券结论，均来自麦当劳 MCP 的真实调用，而不是语言模型生成。
+
 ## 1. 使用概况（待填写 / 由参赛者确认）
 
 | 项 | 内容 |
@@ -25,7 +33,8 @@
 | 选题避撞 | 分析已公开参赛作品，判断「预算推荐类」已拥挤，转向「跨渠道比价 + 券核销」 | 差异点写入 [`README.md`](README.md) §2、[`CONTEST_DECLARATION.md`](CONTEST_DECLARATION.md) |
 | 需求收敛 | 把「比价」拆成商品对齐 / 渠道 / 资产 / 组合四层 | [`docs/PRD.md`](docs/PRD.md) |
 | 数据契约梳理 | 归纳 MCP 返回字段、错误码语义与工程陷阱 | [`docs/SMOKE_TEST_REPORT.md`](docs/SMOKE_TEST_REPORT.md) §7 |
-| 代码生成 / 重构 | 生成领域模型、优化器骨架与 UI 页面 | [`src/domain/`](src/domain)、[`src/app/`](src/app) |
+| 技能落地 | 把决策协议写成 SKILL.md 的 7 步流程、输出模板与「不要做的事」 | [`SKILL.md`](SKILL.md) |
+| 脚本实现 | 生成零依赖计算脚本（对齐 / 候选 / 排序 / 报告）与单测 | [`scripts/`](scripts) |
 | 排错 | 定位「productCode 跨渠道不通用」「打包服务费重复计入」「0 积分导致抽奖不可演示」 | §3 排错记录 |
 | 文档与演示 | 撰写 README / 参赛声明 / 演示脚本 | 根目录各 Markdown |
 
